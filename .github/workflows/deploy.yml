@@ -1,5 +1,4 @@
-
-name: deloyement sur github pages
+name: déploiement sur GitHub Pages
 
 on:
   push:
@@ -23,5 +22,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  # ou ./public si ton code est là
-          
+          publish_dir: .  # ou ./public si tes fichiers sont dans public/

@@ -12,14 +12,17 @@ permissions:
 
 jobs:
   deploy:
+    name: Build and deploy to GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./  # Ou le dossier de sortie de votre build (ex: '_site' pour Jekyll)
+          publish_branch: gh-pages  # Explicite
+          force_orphan: true  # Garde seulement les derniers fichiers déployés
